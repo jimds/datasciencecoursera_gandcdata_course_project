@@ -1,11 +1,11 @@
 Code Book
 ========================================================
 
---Subject
+###Subject
 
 The subject identified by positive integer
 
---Activity
+###Activity
 
 The activity at the time of the observation
 
@@ -16,20 +16,20 @@ The activity at the time of the observation
  STANDING
  LAYING
 
---Time_Body_Acceleration_Mean_X
+###Time_Body_Acceleration_Mean_X
 The mean acceleration over time on the X axis, normalised and bounded within [-1,1]
 
---Time_Body_Acceleration_Mean_Y
+###Time_Body_Acceleration_Mean_Y
 The mean acceleration over time on the Y axis, normalised and bounded within [-1,1]
 
---Time_Body_Acceleration_Mean_Z
+###Time_Body_Acceleration_Mean_Z
 The mean acceleration over time on the Z axis, normalised and bounded within [-1,1]
 
---Time_Body_Acceleration_Standard_Deviation_X    
+###Time_Body_Acceleration_Standard_Deviation_X    
 The standard deviation of acceleration over time on the X axis, normalised and bounded within [-1,1]
 
---Time_Body_Acceleration_Standard_Deviation_Y    
+###Time_Body_Acceleration_Standard_Deviation_Y    
 The standard deviation of acceleration over time on the Y axis, normalised and bounded within [-1,1]
 
---Time_Body_Acceleration_Standard_Deviation_Z    
+###Time_Body_Acceleration_Standard_Deviation_Z    
 The standard deviation of acceleration over time on the Z axis, normalised and bounded within [-1,1]
