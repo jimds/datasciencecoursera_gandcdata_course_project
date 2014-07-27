@@ -9,12 +9,12 @@ The subject identified by positive integer
 
 The activity at the time of the observation
 
- WALKING
- WALKING_UPSTAIRS
- WALKING_DOWNSTAIRS
- SITTING
- STANDING
- LAYING
+ *WALKING
+ *WALKING_UPSTAIRS
+ *WALKING_DOWNSTAIRS
+ *SITTING
+ *STANDING
+ *LAYING
 
 ###Time_Body_Acceleration_Mean_X
 The mean acceleration over time on the X axis, normalised and bounded within [-1,1]
