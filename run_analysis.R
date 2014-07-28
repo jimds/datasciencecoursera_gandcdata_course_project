@@ -32,4 +32,26 @@ combined_trimmed <-combined_all[1:(6+2)]
 ##Rename columns to descriptive names
 names(combined_trimmed)<- c("Subject","Activity","Time_Body_Acceleration_Mean_X","Time_Body_Acceleration_Mean_Y","Time_Body_Acceleration_Mean_Z","Time_Body_Acceleration_Standard_Deviation_X","Time_Body_Standard_Deviation_Y","Time_Body_Standard_Deviation_Z")
 
+## Write tidy data file
+write.table(combined_trimmed, file = "tidydata.txt",row.names = FALSE)
 
+##5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject. (This has been taken as generating the averages for each actvity FOR each subject)
+##create data frame for the new tody data
+avg_data<-data.frame(Subject=integer(),Activity=character(),Time_Body_Acceleration_Average_Mean_X=numeric(),Time_Body_Acceleration_Average_Mean_Y=numeric(),Time_Body_Acceleration_Average_Mean_Z=numeric(),Time_Body_Acceleration_Average_Standard_Deviation_X=numeric(),Time_Body_Acceleration_Average_Standard_Deviation_Y=numeric(),Time_Body_Acceleration_Average_Standard_Deviation_Z=numeric())
+##get a list of all unique subjects
+subjects<-unique(combined_trimmed[,1])
+for(s in subjects){
+    ##get subject's data
+    subject_data <- subset(combined_trimmed,Subject==s)
+    ##get uniqe activities for that subject
+    sub_activities<- unique(subject_data[,2])
+    for(act in sub_activities){
+        ##work out the average for the individual activity
+        new_row<- data.frame(Subject=s,Activity=act, Time_Body_Acceleration_Average_Mean_X=mean(subset(subject_data,Activity==act)[,3]),Time_Body_Acceleration_Average_Mean_Y=mean(subset(subject_data,Activity==act)[,4]),Time_Body_Acceleration_Average_Mean_Z=mean(subset(subject_data,Activity==act)[,5]),Time_Body_Acceleration_Average_Standard_Deviation_X=mean(subset(subject_data,Activity==act)[,6]),Time_Body_Acceleration_Average_Standard_Deviation_Y=mean(subset(subject_data,Activity==act)[,7]),Time_Body_Acceleration_Average_Standard_Deviation_Z=mean(subset(subject_data,Activity==act)[,8]))
+        ##Add new row to the data frame
+        avg_data <- rbind(avg_data, new_row)
+    }
+}
+
+## Write second tidy data file
+write.table(avg_data, file = "tidydata_averages.txt",row.names = FALSE)

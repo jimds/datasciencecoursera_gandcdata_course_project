@@ -1,4 +1,4 @@
-datasciencecoursera_gandcdata_course_project
+Course Project Readme
 ============================================
 
 ###Usage
@@ -26,3 +26,8 @@ The column names are then changed to descriptive column names
 
 The tidy data set is then written to a file, *tidydata.txt*
 
+For step 5, the unique subjects are found and the the unique activites for each subject are found
+
+The average values for each of the activites for each unique subject is calculated and the added to a data frame.
+
+This data frame is then written to *tidydata_averages.txt*
